@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location - Revive Thrift Co.</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #3b2f1e;
+            background-color: #f5f0e6;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #3d5c3a;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: #f5f0e6;
+            text-decoration: none;
+        }
+
+        /* Main Container */
+        .location-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .location-container h1 {
+            margin-top: 0;
+            color: #3d5c3a;
+        }
+
+        /* Two-Column Grid */
+        .location-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .info-section {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .map-section {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .info-section h3 {
+            color: #3d5c3a;
+            margin-bottom: 8px;
+        }
+
+        .info-section p {
+            line-height: 1.6;
+            margin-top: 0;
+        }
+
+        /* Responsive Map Embed */
+        .map-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="Home.html">
+            <img src="Images/Revive Thrift Co. Logo.png" alt="Revive Thrift Co. Logo" style="height: 220px;">
+        </a>
+        <ul class="nav-links">
+            <li><a href="About page.html">About</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="Location page.html">Location</a></li>
+            <li><a href="Contact page.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Location Content -->
+    <main class="location-container">
+        <h1>Visit Our Store</h1>
+        <p>Drop by our shop to explore our latest thrifting finds in person!</p>
+
+        <div class="location-grid">
+            <!-- Store Details -->
+            <div class="info-section">
+                <h3>Address</h3>
+                <p>
+                    123 Main Street<br>
+                    Suite 4B<br>
+                    City, Province, 2000
+                </p>
+
+                <h3>Trading Hours</h3>
+                <p>
+                    <strong>Monday – Friday:</strong> 09:00 – 17:00<br>
+                    <strong>Saturday:</strong> 09:00 – 15:00<br>
+                    <strong>Sunday & Public Holidays:</strong> Closed
+                </p>
+
+                <h3>Contact Details</h3>
+                <p>
+                    <strong>Phone:</strong> +27 11 123 4567<br>
+                    <strong>Email:</strong> info@revivethrift.co.za
+                </p>
+            </div>
+
+            <!-- Embedded Google Map -->
+            <div class="map-section">
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.088686121946!2d28.0315!3d-26.1925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDExJzMzLjAiUyAyOMKwMDEnNTMuNCJF!5e0!3m2!1sen!2sza!4v1600000000000!5m2!1sen!2sza" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
