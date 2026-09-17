@@ -4,28 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About This Project | Revive Thrift Co.</title>
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
-<body style="margin:0; font-family: Arial, sans-serif; color:#3b2f1e; background-color:#f5f0e6;">
+<body>
 
   <!-- Header / Navigation -->
-  <header style="background-color:#3d5c3a; padding:20px 40px; display:flex; justify-content:space-between; align-items:center;">
-    <a href="Home.html">
-      <img src="images/Revive Thrift Co. Logo.png " alt="Revive Thrift Co. logo" style="height:220px;">
+  <header>
+    <a href="Home.html" class="logo">
+      <img src="Images/Revive ThriftCo. Logo.png" alt="Revive Thrift Co. logo">
     </a>
-    <ul style="list-style:none; display:flex; gap:24px; margin:0; padding:0;">
+    <ul class="nav-links">
+      <li><a href="Home.html">Home</a></li>
+      <li><a href="About page.html">About</a></li>
+      <li><a href="Home.html#shop">Shop</a></li>
+      <li><a href="Location page.html">Location</a></li>
+      <li><a href="Contact page.html">Contact</a></li>
     </ul>
   </header>
 
   <!-- Page Title -->
-  <section style="text-align:center; padding:60px 20px; background-color:#d9a441;">
-    <h1 style="font-size:36px; margin-bottom:10px; color:#3b2f1e;">About Our Website and Store</h1>
-    <p style="font-size:16px;">Everything you need to know about how and why this site was built.</p>
+  <section class="hero">
+    <h1>About Our Website and Store</h1>
+    <p>Everything you need to know about how and why this site was built.</p>
   </section>
 
   <!-- Who Created It -->
-  <section style="padding:50px 40px; max-width:700px; margin:0 auto;">
-    <h2 style="color:#3d5c3a;">Who Created This Website</h2>
-    <p style="line-height:1.6;">
+  <section class="content-block">
+    <h2>Who Created This Website</h2>
+    <p>
       This website was designed and developed by Lesedi Reabetsoe Tsutsubi
       (Student Number: ST10519854), for the Web Development module
       (WEDE5020), Group 2, at Rosebank International (The IIE).
@@ -33,9 +39,9 @@
   </section>
 
   <!-- Who It's For -->
-  <section style="padding:50px 40px; max-width:700px; margin:0 auto; background-color:#ece3d0;">
-    <h2 style="color:#3d5c3a;">Who This Website Is For</h2>
-    <p style="line-height:1.6;">
+  <section class="content-block section-alt">
+    <h2>Who This Website Is For</h2>
+    <p>
       Revive Thrift Co. is aimed at students and young professionals in
       Braamfontein, Johannesburg, who are looking for affordable, quality
       second-hand and vintage fashion. The site gives them an easy way to
@@ -45,9 +51,9 @@
   </section>
 
   <!-- Why It Was Created -->
-  <section style="padding:50px 40px; max-width:700px; margin:0 auto;">
-    <h2 style="color:#3d5c3a;">Why This Website Was Created</h2>
-    <p style="line-height:1.6;">
+  <section class="content-block">
+    <h2>Why This Website Was Created</h2>
+    <p>
       Braamfontein previously had a well-known thrift store that has since
       closed permanently, leaving a gap in the area's second-hand fashion
       scene. This project imagines a new thrift business, Revive Thrift Co.,
@@ -58,9 +64,9 @@
   </section>
 
   <!-- Fun Facts -->
-  <section style="padding:50px 40px; max-width:700px; margin:0 auto; background-color:#ece3d0;">
-    <h2 style="color:#3d5c3a;">Fun Facts About the Project</h2>
-    <ul style="line-height:1.8;">
+  <section class="content-block section-alt">
+    <h2>Fun Facts About the Project</h2>
+    <ul>
       <li>The colour palette (mustard, forest green, and cream) was chosen deliberately to evoke a warm, vintage feel.</li>
       <li>Revive Thrift Co. is a fictional business, loosely inspired by a real Braamfontein thrift store that has since closed.</li>
       <li>The site was planned first as a full written proposal before a single line of code was written.</li>
@@ -69,20 +75,32 @@
   </section>
 
   <!-- Store Location -->
-  <section style="padding:50px 40px; max-width:700px; margin:0 auto;">
-    <h2 style="color:#3d5c3a;">Where to Find the Store</h2>
-    <p style="line-height:1.6;">
+  <section class="content-block">
+    <h2>Where to Find the Store</h2>
+    <p>
       Braamfontein, Johannesburg<br>
       Open Monday – Saturday, 9am – 5pm
     </p>
-    <a href="index.html#location" style="display:inline-block; margin-top:10px; background-color:#3d5c3a; color:#f5f0e6; padding:12px 24px; text-decoration:none; border-radius:4px;">
-      View on the Homepage
-    </a>
+    <a href="Location page.html" class="btn btn-primary">View Full Location Details</a>
+  </section>
+
+  <!-- Behind the Racks -->
+  <section class="split split-alt">
+    <div><img src="Images/Picture 8.jpeg" alt="Vintage caps at Revive Thrift Co."></div>
+    <div class="split-text">
+      <h2>Behind the Racks</h2>
+      <p>
+        Every piece at Revive Thrift Co. has a past life — that's the point.
+        This project was built to give that idea a proper home online,
+        the same way it deserves one in Braamfontein.
+      </p>
+      <a href="Home.html" class="btn btn-primary">Back to Home</a>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer style="background-color:#3b2f1e; color:#f5f0e6; text-align:center; padding:20px;">
-    <p style="margin:0;">&copy; 2026 Revive Thrift Co. All rights reserved,ST10519854.</p>
+  <footer>
+    <p>&copy; 2026 Revive Thrift Co. All rights reserved. ST10519854.</p>
   </footer>
 
 </body>

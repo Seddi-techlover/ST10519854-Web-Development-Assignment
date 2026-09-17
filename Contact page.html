@@ -3,103 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Revive Thrift Co.</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #3b2f1e;
-            background-color: #f5f0e6;
-        }
-
-        /* Header Navigation */
-        header {
-            background-color: #3d5c3a;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 24px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links a {
-            color: #f5f0e6;
-            text-decoration: none;
-        }
-
-        /* Main Contact Section */
-        .contact-container {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .contact-container h1 {
-            margin-top: 0;
-            color: #3d5c3a;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-family: inherit;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            background-color: #3d5c3a;
-            color: #f5f0e6;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .submit-btn:hover {
-            background-color: #2c442a;
-        }
-    </style>
+ <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
     <!-- Header Navigation -->
     <header>
-        <a href="Home.html">
-            <img src="Images/Revive Thrift Co. Logo.png" alt="Revive Thrift Co. Logo" style="height: 220px;">
+        <a href="Home.html" class="logo">
+            <img src="Images/Revive ThriftCo. Logo.png" alt="Revive Thrift Co. logo">
         </a>
         <ul class="nav-links">
-            <li><a href="About page.html">About</a></li>
-            <li><a href="#shop">Shop</a></li>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="About_page.html">About</a></li>
+            <li><a href="Home.html#shop">Shop</a></li>
             <li><a href="Location page.html">Location</a></li>
             <li><a href="Contact page.html">Contact</a></li>
         </ul>
@@ -122,6 +38,11 @@
             </div>
 
             <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="071 234 5678">
+            </div>
+
+            <div class="form-group">
                 <label for="subject">Subject</label>
                 <input type="text" id="subject" name="subject" required placeholder="Order inquiry, stock question, etc.">
             </div>
@@ -131,9 +52,27 @@
                 <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
     </main>
+
+    <!-- Contact Page Gallery -->
+    <section class="section section-alt">
+        <h2>Find Us In Store</h2>
+        <div class="catalogue-grid">
+            <div class="catalogue-item">
+                <img src="Images/Picture 2.jpeg" alt="Inside Revive Thrift Co.">
+            </div>
+            <div class="catalogue-item">
+                <img src="Images/Picture 4.jpeg" alt="Revive Thrift Co. rack">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Revive Thrift Co. All rights reserved. ST10519854.</p>
+    </footer>
 
 </body>
 </html>
