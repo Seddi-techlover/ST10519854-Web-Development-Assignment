@@ -1,0 +1,9 @@
+# robots.txt for Revive Thrift Co.
+# Allows all search engines to crawl the whole site.
+User-agent: *
+Allow: /
+
+# Project files that should not appear in search results
+Disallow: /Documents/
+
+Sitemap: https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/sitemap.xml

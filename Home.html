@@ -3,78 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Revive Thrift Co. | Quality Fits For Low Prices</title>
-  <link rel="stylesheet" href="CSS/style.css"> 
+  <title>Revive Thrift Co. | Affordable Vintage &amp; Second-Hand Clothing in Braamfontein</title>
+  <!-- ===== SEO: search engine and social sharing metadata ===== -->
+  <meta name="description" content="Revive Thrift Co. is a Braamfontein thrift store selling affordable vintage tees, denim, caps, footwear and jewellery. New one-of-a-kind stock lands weekly.">
+  <meta name="keywords" content="thrift store Braamfontein, second-hand clothing Johannesburg, vintage clothing South Africa, affordable thrift fashion, vintage denim, sustainable fashion">
+  <meta name="author" content="Lesedi Reabetsoe Tsutsubi (ST10519854)">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#3d5c3a">
+  <link rel="canonical" href="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/">
+
+  <!-- Open Graph: how the page looks when shared on social media -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Revive Thrift Co.">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Revive Thrift Co. | Affordable Vintage & Second-Hand Clothing in Braamfontein">
+  <meta property="og:description" content="Revive Thrift Co. is a Braamfontein thrift store selling affordable vintage tees, denim, caps, footwear and jewellery. New one-of-a-kind stock lands weekly.">
+  <meta property="og:url" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/">
+  <meta property="og:image" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/Images/Picture%203.jpeg">
+  <meta property="og:image:alt" content="A rack of vintage tees inside Revive Thrift Co.">
+
+  <!-- Twitter/X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Revive Thrift Co. | Affordable Vintage & Second-Hand Clothing in Braamfontein">
+  <meta name="twitter:description" content="Revive Thrift Co. is a Braamfontein thrift store selling affordable vintage tees, denim, caps, footwear and jewellery. New one-of-a-kind stock lands weekly.">
+  <meta name="twitter:image" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/Images/Picture%203.jpeg">
+
+  <link rel="icon" href="Images/Revive ThriftCo. Logo.png" type="image/png">
+  <!-- Structured data: helps search engines show the store as a local business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https:/schema.org",
+    "@type": "ClothingStore",
+    "name": "Revive Thrift Co.",
+    "description": "Affordable vintage and second-hand clothing store in Braamfontein, Johannesburg.",
+    "url": "https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/",
+    "image": "https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/Images/Picture%203.jpeg",
+    "logo": "https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/Images/Revive%20ThriftCo.%20Logo.png",
+    "telephone": "+27111234567",
+    "email": "info@revivethrift.co.za",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Braamfontein",
+      "addressLocality": "Johannesburg",
+      "postalCode": "2001",
+      "addressCountry": "ZA"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": -26.1925, "longitude": 28.0315 },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }],
+    "priceRange": "R"
+  }
+  </script>
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
   <!-- Header / Navigation -->
   <header>
     <a href="Home.html" class="logo">
-      <img src="Images/Revive ThriftCo. Logo.png" alt="Revive Thrift Co. logo">
+      <img src="Images/Revive ThriftCo. Logo.png" alt="Revive Thrift Co. logo — a Braamfontein thrift store">
     </a>
     <ul class="nav-links">
       <li><a href="Home.html">Home</a></li>
       <li><a href="About page.html">About</a></li>
       <li><a href="#shop">Shop</a></li>
       <li><a href="Location page.html">Location</a></li>
+      <li><a href="Enquiry page.html">Enquiry</a></li>
       <li><a href="Contact page.html">Contact</a></li>
     </ul>
   </header>
 
-  <!-- Hero Section -->
+  <!-- This section houses how long the business has been running
+   and how we view our role in the community -->
   <section id="home" class="hero">
     <div class="hero-eyebrow">Braamfontein · Since 2026</div>
-    <h1>REVIVE<br>THRIFT<br>CO.</h1>
+    <h1>THRIFT<br>REVIVE<br>REPEAT</h1>
     <p>Affordable, unique second-hand style for Braamfontein — quality fits, low prices, zero pretense.</p>
     <a href="#shop" class="btn btn-primary">Shop the Catalogue</a>
   </section>
 
-  <!-- Category Ticker -->
+  <!-- Category Ticker, this will appear at the top left of each category
+   to let the customers know what's new, and special eddition 
+   pieces -->
   <div class="ticker">
     <span>NEW IN WEEKLY</span>
-    <span>RARE FINDS</span> 
+    <span>RARE FINDS</span>
     <span>ONE-OF-A-KIND PIECES</span>
     <span>SUSTAINABLE STYLE</span>
     <span>NEW IN WEEKLY</span>
     <span>RARE FINDS</span>
   </div>
 
-  <!-- Shop / Catalogue Preview -->
+  <!-- The shopping section where customers can browse the catalogue.
+   Customers can search by keyword and filter by category, and the
+   results count updates live as they type or choose a category. -->
   <section id="shop" class="section section-alt">
     <h2>Shop by Taste</h2>
-    <div class="catalogue-grid">
-      <div class="catalogue-item">
-        <span class="catalogue-tag">New In</span>
-        <img src="Images/Picture 3.jpeg" alt="All Vintage Tees">
-        <p>All Vintage Tees</p>
+    <p class="section-intro">Search the racks or filter by category — new one-of-one pieces land weekly.</p>
+
+    <!-- Search and category filter controls -->
+    <div class="catalogue-controls">
+      <div class="search-field">
+        <label for="catalogue-search">Search the catalogue</label>
+        <input type="search" id="catalogue-search" placeholder="Try &quot;denim&quot;, &quot;Levi's&quot; or &quot;caps&quot;" autocomplete="off">
       </div>
-      <div class="catalogue-item">
-        <span class="catalogue-tag">New In</span>
-        <img src="Images/Picture 7.jpeg" alt="All Denims">
-        <p>All Denims</p>
+
+      <div class="filter-chips" role="group" aria-label="Filter the catalogue by category">
+        <button type="button" class="chip chip-active" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-filter="tees" aria-pressed="false">Tees</button>
+        <button type="button" class="chip" data-filter="denim" aria-pressed="false">Denim</button>
+        <button type="button" class="chip" data-filter="hoodies" aria-pressed="false">Hoodies</button>
+        <button type="button" class="chip" data-filter="knitwear" aria-pressed="false">Knitwear</button>
+        <button type="button" class="chip" data-filter="caps" aria-pressed="false">Caps</button>
+        <button type="button" class="chip" data-filter="jewellery" aria-pressed="false">Jewellery</button>
+        <button type="button" class="chip" data-filter="footwear" aria-pressed="false">Footwear</button>
       </div>
-      <div class="catalogue-item">
+
+      <p class="catalogue-count" id="catalogue-count" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="catalogue-grid" id="catalogue-grid">
+      <div class="catalogue-item" data-category="tees" data-name="Vintage Graphic Tee Bundle" data-keywords="graphic tees t-shirts band prints cotton bundle">
+        <span class="catalogue-tag">New In</span>
+        <img src="Images/Picture 1.jpeg" alt="Stacks of folded vintage graphic T-shirts sorted by print" class="lightbox-trigger">
+        <p>Vintage Graphic Tee Bundle</p>
+        <p class="catalogue-meta">Tees &middot; from R120</p>
+      </div>
+      <div class="catalogue-item" data-category="tees" data-name="Printed Tee Rail" data-keywords="tees t-shirts rail hanging single stitch faded">
         <span class="catalogue-tag">Rare Find</span>
-        <img src="Images/Picture 11.jpeg" alt="Vintage Caps">
-        <p>Vintage Caps</p>
+        <img src="Images/Picture 2.jpeg" alt="A rail of hanging printed vintage T-shirts beside a window" class="lightbox-trigger">
+        <p>Printed Tee Rail</p>
+        <p class="catalogue-meta">Tees &middot; from R150</p>
       </div>
-      <div class="catalogue-item">
+      <div class="catalogue-item" data-category="tees" data-name="NBA & Sports Tees" data-keywords="tees basketball nba bulls pistons sports jersey print">
         <span class="catalogue-tag">New In</span>
-        <img src="Images/Picture 14.jpeg" alt="Footwear">
-        <p>Footwear</p>
+        <img src="Images/Picture 23.jpeg" alt="Hanging basketball and sports team T-shirts including Bulls and Pistons prints" class="lightbox-trigger">
+        <p>NBA & Sports Tees</p>
+        <p class="catalogue-meta">Tees &middot; from R180</p>
       </div>
-      <div class="catalogue-item">
+      <div class="catalogue-item" data-category="knitwear" data-name="Patterned Knit Jerseys" data-keywords="knitwear jerseys jumpers sweaters patterned wool winter">
         <span class="catalogue-tag">Rare Find</span>
-        <img src="Images/Picture 13.jpeg" alt="Vintage Jewelry">
-        <p>Vintage Jewelry</p>
+        <img src="Images/Picture 15.jpeg" alt="A rail of patterned vintage knit jerseys and jumpers" class="lightbox-trigger">
+        <p>Patterned Knit Jerseys</p>
+        <p class="catalogue-meta">Knitwear &middot; from R220</p>
+      </div>
+      <div class="catalogue-item" data-category="hoodies" data-name="Branded Hoodie Mix" data-keywords="hoodies sweatshirts carhartt adidas fleece crewneck">
+        <span class="catalogue-tag">New In</span>
+        <img src="Images/Picture 17.jpeg" alt="A pile of branded second-hand hoodies and sweatshirts" class="lightbox-trigger">
+        <p>Branded Hoodie Mix</p>
+        <p class="catalogue-meta">Hoodies &middot; from R250</p>
+      </div>
+      <div class="catalogue-item" data-category="denim" data-name="Levi's &amp; Lee Jeans" data-keywords="denim jeans levis lee tommy hilfiger blue wash">
+        <span class="catalogue-tag">New In</span>
+        <img src="Images/Picture 6.jpeg" alt="A pile of second-hand Levi's, Lee and Tommy Hilfiger jeans" class="lightbox-trigger">
+        <p>Levi's &amp; Lee Jeans</p>
+        <p class="catalogue-meta">Denim &middot; from R280</p>
+      </div>
+      <div class="catalogue-item" data-category="denim" data-name="Printed Denim Jackets" data-keywords="denim jackets printed back print trucker jacket">
+        <span class="catalogue-tag">Rare Find</span>
+        <img src="Images/Picture 7.jpeg" alt="A rail of denim jackets with large printed back designs" class="lightbox-trigger">
+        <p>Printed Denim Jackets</p>
+        <p class="catalogue-meta">Denim &middot; from R450</p>
+      </div>
+      <div class="catalogue-item" data-category="denim" data-name="Straight-Leg 501s" data-keywords="denim jeans levis 501 straight leg light wash">
+        <span class="catalogue-tag">New In</span>
+        <img src="Images/Picture 8.jpeg" alt="Folded straight-leg Levi's 501 jeans in light and mid washes" class="lightbox-trigger">
+        <p>Straight-Leg 501s</p>
+        <p class="catalogue-meta">Denim &middot; from R300</p>
+      </div>
+      <div class="catalogue-item" data-category="hoodies" data-name="St&uuml;ssy &amp; Harley Sweats" data-keywords="hoodies sweatshirts stussy harley davidson crewneck grey">
+        <span class="catalogue-tag">Rare Find</span>
+        <img src="Images/Picture 9.jpeg" alt="Stüssy and Harley-Davidson sweatshirts folded to show their original labels" class="lightbox-trigger">
+        <p>St&uuml;ssy &amp; Harley Sweats</p>
+        <p class="catalogue-meta">Hoodies &middot; from R320</p>
+      </div>
+      <div class="catalogue-item" data-category="caps" data-name="Carhartt &amp; Team Caps" data-keywords="caps hats carhartt phillies snapback trucker cap">
+        <span class="catalogue-tag">New In</span>
+        <img src="Images/Picture 11.jpeg" alt="A basket of vintage caps including Carhartt and Phillies designs" class="lightbox-trigger">
+        <p>Carhartt &amp; Team Caps</p>
+        <p class="catalogue-meta">Caps &middot; from R85</p>
+      </div>
+      <div class="catalogue-item" data-category="denim" data-name="Carhartt Workwear Denim" data-keywords="denim carhartt workwear jeans double knee tan">
+        <span class="catalogue-tag">New In</span>
+        <img src="Images/Picture 12.jpeg" alt="Folded Carhartt workwear jeans stacked with Levi's pairs" class="lightbox-trigger">
+        <p>Carhartt Workwear Denim</p>
+        <p class="catalogue-meta">Denim &middot; from R340</p>
+      </div>
+      <div class="catalogue-item" data-category="jewellery" data-name="Gold-Tone Jewellery" data-keywords="jewellery jewelry chains rings earrings gold vintage accessories">
+        <span class="catalogue-tag">Rare Find</span>
+        <img src="Images/Picture 13.jpeg" alt="A display case of gold-tone vintage chains, rings and earrings" class="lightbox-trigger">
+        <p>Gold-Tone Jewellery</p>
+        <p class="catalogue-meta">Jewellery &middot; from R40</p>
+      </div>
+      <div class="catalogue-item" data-category="footwear" data-name="Retro Runner Sneakers" data-keywords="footwear sneakers trainers shoes retro runners nike">
+        <span class="catalogue-tag">New In</span>
+        <img src="Images/Picture 14.jpeg" alt="An armful of retro running sneakers in mixed colourways" class="lightbox-trigger">
+        <p>Retro Runner Sneakers</p>
+        <p class="catalogue-meta">Footwear &middot; from R800</p>
       </div>
     </div>
-  </section>
 
-  <!-- Our Story (split section) -->
+    <!-- Shown only when nothing matches the search or filter -->
+    <p class="catalogue-empty" id="catalogue-empty" hidden>
+      No pieces match that search. Try a broader term, or
+      <a href="Enquiry page.html">send us an enquiry</a> and we'll look out for it.
+    </p>
+  </section>
+  <!-- A brief small story of how the business started and its mission and
+   how thrifting can be looked at as a sustainable practice -->
   <section id="about" class="split">
-    <div><img src="Images/Picture 1.jpeg" alt="Inside Revive Thrift Co."></div>
+    <div><img src="Images/Picture 16.jpeg" alt="Inside Revive Thrift Co., showing clothing rails and browsing space"></div>
     <div class="split-text">
       <h2>Our Story</h2>
       <p>
@@ -88,7 +230,7 @@
 
   <!-- Location Section -->
   <section id="location" class="split split-reverse">
-    <div><img src="Images/Picture 10.jpeg" alt="Revive Thrift Co. store"></div>
+    <div><img src="Images/Picture 18.jpeg" alt="The Revive Thrift Co. shopfront in Braamfontein, Johannesburg"></div>
     <div class="split-text">
       <h2>Visit Us</h2>
       <p>Braamfontein, Johannesburg<br>Mon–Sat: 9am – 5pm</p>
@@ -98,7 +240,7 @@
 
   <!-- Contact Section -->
   <section id="contact" class="split split-alt">
-    <div><img src="Images/Picture 6.jpeg" alt="Revive Thrift Co. accessories"></div>
+    <div><img src="Images/Picture 19.jpeg" alt="Accessories counter at Revive Thrift Co. with belts and jewellery"></div>
     <div class="split-text">
       <h2>Get in Touch</h2>
       <p>Have questions about stock, sizing, or orders? We're always happy to help.</p>
@@ -111,5 +253,12 @@
     <p>&copy; 2026 Revive Thrift Co. All rights reserved. ST10519854.</p>
   </footer>
 
+  <!-- Lightbox Overlay (shared by gallery images) -->
+  <div id="lightbox-overlay" class="lightbox-overlay">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+    <img id="lightbox-image" src="" alt="">
+  </div>
+
+  <script src="JavaScript/script.js"></script>
 </body>
 </html>
