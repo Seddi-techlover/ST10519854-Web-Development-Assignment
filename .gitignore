@@ -1,0 +1,16 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Office temporary files (the "~$" files Word leaves behind)
+~$*
+*.tmp
+
+# Logs
+*.log

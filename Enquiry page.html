@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquire About Stock, Sizing or Bulk Orders | Revive Thrift Co.</title>
+  <!-- ===== SEO: search engine and social sharing metadata ===== -->
+  <meta name="description" content="Ask Revive Thrift Co. about item availability, sizing and fit, custom requests or bulk and wholesale orders, and get a reply within one business day.">
+  <meta name="keywords" content="thrift stock enquiry, second-hand clothing availability, vintage sizing enquiry, bulk thrift order South Africa">
+  <meta name="author" content="Lesedi Reabetsoe Tsutsubi (ST10519854)">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#3d5c3a">
+  <link rel="canonical" href="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/enquiry.html">
+
+  <!-- Open Graph: how the page looks when shared on social media -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Revive Thrift Co.">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Enquire About Stock, Sizing or Bulk Orders | Revive Thrift Co.">
+  <meta property="og:description" content="Ask Revive Thrift Co. about item availability, sizing and fit, custom requests or bulk and wholesale orders, and get a reply within one business day.">
+  <meta property="og:url" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/enquiry.html">
+  <meta property="og:image" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/Images/Picture%2014.jpeg">
+  <meta property="og:image:alt" content="Second-hand footwear on the shelves at Revive Thrift Co.">
+
+  <!-- Twitter/X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Enquire About Stock, Sizing or Bulk Orders | Revive Thrift Co.">
+  <meta name="twitter:description" content="Ask Revive Thrift Co. about item availability, sizing and fit, custom requests or bulk and wholesale orders, and get a reply within one business day.">
+  <meta name="twitter:image" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/Images/Picture%2014.jpeg">
+
+  <link rel="icon" href="Images/Revive ThriftCo. Logo.png" type="image/png">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="Home.html" class="logo">
+            <img src="Images/Revive ThriftCo. Logo.png" alt="Revive Thrift Co. logo — a Braamfontein thrift store">
+        </a>
+        <ul class="nav-links">
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="About page.html">About</a></li>
+            <li><a href="Home.html">Shop</a></li>
+            <li><a href="Location page.html">Location</a></li>
+            <li><a href="Enquiry page.html">Enquiry</a></li>
+            <li><a href="Contact page.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Main Content -->
+    <main class="contact-container">
+        <h1>Enquire About Stock</h1>
+        <p>Ask about availability, sizing, or a custom request — we'll get back to you with the details.</p>
+
+        <!-- Submitted with fetch() in script.js — no page reload -->
+        <form id="enquiry-form" novalidate>
+            <!-- Honeypot: hidden from people, catches bots -->
+            <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="form-group">
+                <label for="enq-name">Name</label>
+                <input type="text" id="enq-name" name="name" placeholder="Your full name">
+                <span class="error-text" id="enq-name-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="enq-email">Email Address</label>
+                <input type="email" id="enq-email" name="email" placeholder="your.email@example.com">
+                <span class="error-text" id="enq-email-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="enq-type">Enquiry Type</label>
+                <select id="enq-type" name="enquiryType">
+                    <option value="">Select an option</option>
+                    <option value="availability">Product Availability</option>
+                    <option value="sizing">Sizing & Fit</option>
+                    <option value="custom">Custom Request</option>
+                    <option value="bulk">Bulk / Wholesale Order</option>
+                </select>
+                <span class="error-text" id="enq-type-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="enq-item">Item or Category</label>
+                <input type="text" id="enq-item" name="item" placeholder="e.g. Vintage denim jacket, size M">
+                <span class="error-text" id="enq-item-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="enq-message">Message</label>
+                <textarea id="enq-message" name="message" placeholder="Any extra detail we should know?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+        </form>
+
+        <div id="enquiry-response" class="form-response" role="status" aria-live="polite" hidden></div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Revive Thrift Co. All rights reserved. ST10519854.</p>
+    </footer>
+
+    <script src="JavaScript/script.js"></script>
+</body>
+</html>

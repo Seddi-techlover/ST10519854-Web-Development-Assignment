@@ -3,76 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="CSS/style.css">
+    <title>Contact Revive Thrift Co. | Braamfontein Thrift Store</title>
+  <!-- ===== SEO: search engine and social sharing metadata ===== -->
+  <meta name="description" content="Get in touch with Revive Thrift Co. in Braamfontein. Send us a message about stock, sizing or orders, and read answers to the questions we are asked most.">
+  <meta name="keywords" content="contact Revive Thrift Co, thrift store contact Braamfontein, second-hand clothing enquiries Johannesburg, thrift store FAQ">
+  <meta name="author" content="Lesedi Reabetsoe Tsutsubi (ST10519854)">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#3d5c3a">
+  <link rel="canonical" href="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/contact.html">
+
+  <!-- Open Graph: how the page looks when shared on social media -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Revive Thrift Co.">
+  <meta property="og:locale" content="en_ZA">
+  <meta property="og:title" content="Contact Revive Thrift Co. | Braamfontein Thrift Store">
+  <meta property="og:description" content="Get in touch with Revive Thrift Co. in Braamfontein. Send us a message about stock, sizing or orders, and read answers to the questions we are asked most.">
+  <meta property="og:url" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/contact.html">
+  <meta property="og:image" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/Images/Picture%2013.jpeg">
+  <meta property="og:image:alt" content="Vintage jewellery displayed at Revive Thrift Co.">
+
+  <!-- Twitter/X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact Revive Thrift Co. | Braamfontein Thrift Store">
+  <meta name="twitter:description" content="Get in touch with Revive Thrift Co. in Braamfontein. Send us a message about stock, sizing or orders, and read answers to the questions we are asked most.">
+  <meta name="twitter:image" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/Images/Picture%2013.jpeg">
+
+  <link rel="icon" href="Images/Revive ThriftCo. Logo.png" type="image/png">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
     <!-- Header Navigation -->
     <header>
         <a href="Home.html" class="logo">
-            <img src="Images/Revive ThriftCo. Logo.png" alt="Revive Thrift Co. logo">
+            <img src="Images/Revive ThriftCo. Logo.png" alt="Revive Thrift Co. logo — a Braamfontein thrift store">
         </a>
         <ul class="nav-links">
             <li><a href="Home.html">Home</a></li>
-            <li><a href="About_page.html">About</a></li>
-            <li><a href="Home.html#shop">Shop</a></li>
+            <li><a href="About page.html">About</a></li>
+            <li><a href="Home.html">Shop</a></li>
             <li><a href="Location page.html">Location</a></li>
+            <li><a href="Enquiry page.html">Enquiry</a></li>
             <li><a href="Contact page.html">Contact</a></li>
         </ul>
     </header>
 
-    <!-- Main Content -->
+    <!-- This section is the contact form
+     whereby users can submit their contact or personal
+     information incase they want news on new items or
+     our newsletter. Then the location that i have added
+     is not a real location as stated in the proposal this is a 
+     fictional store but i wanted to create as much realism as possible-->
     <main class="contact-container">
         <h1>Get in Touch</h1>
         <p>Have questions about stock, sizing, or orders? Drop us a line below.</p>
 
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <!-- Submitted with fetch() in script.js — no page reload -->
+        <form id="contact-form" novalidate>
+            <!-- Honeypot: hidden from people, catches bots -->
+            <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required placeholder="Your full name">
+                <input type="text" id="name" name="name" placeholder="Your full name">
+                <span class="error-text" id="name-error"></span>
             </div>
 
             <div class="form-group">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                <span class="error-text" id="email-error"></span>
             </div>
 
             <div class="form-group">
                 <label for="phone">Phone Number</label>
                 <input type="tel" id="phone" name="phone" placeholder="071 234 5678">
+                <span class="error-text" id="phone-error"></span>
             </div>
 
             <div class="form-group">
                 <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required placeholder="Order inquiry, stock question, etc.">
+                <input type="text" id="subject" name="subject" placeholder="Order inquiry, stock question, etc.">
+                <span class="error-text" id="subject-error"></span>
             </div>
 
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+                <textarea id="message" name="message" placeholder="How can we help you?"></textarea>
+                <span class="error-text" id="message-error"></span>
             </div>
 
             <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
+
+        <!-- AJAX success / error message appears here -->
+        <div id="contact-response" class="form-response" role="status" aria-live="polite" hidden></div>
     </main>
 
-    <!-- Contact Page Gallery -->
+    <!-- A small gallery section to let customers remember what the store
+     has to offer -->
     <section class="section section-alt">
         <h2>Find Us In Store</h2>
         <div class="catalogue-grid">
             <div class="catalogue-item">
-                <img src="Images/Picture 2.jpeg" alt="Inside Revive Thrift Co.">
+                <img src="Images/Picture 20.jpeg" alt="Inside Revive Thrift Co., showing clothing rails and browsing space" class="lightbox-trigger">
             </div>
             <div class="catalogue-item">
-                <img src="Images/Picture 4.jpeg" alt="Revive Thrift Co. rack">
+                <img src="Images/Picture 22.jpeg" alt="A packed clothing rack of second-hand jackets at Revive Thrift Co." class="lightbox-trigger">
             </div>
         </div>
     </section>
+
+    <!-- FAQ, mainly general questions the customer may have
+     so i did this form so they can be contacted or notified
+     when a new drop comes in stock-->
+    <section class="section">
+        <h2>Before You Reach Out</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">Do you accept returns or exchanges?</div>
+                <div class="accordion-body">
+                    <p>Since every piece is second-hand and one-of-a-kind, all sales are final. We're happy to
+                    answer sizing questions before you buy to help you get it right the first time.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">How often do you get new stock?</div>
+                <div class="accordion-body">
+                    <p>New pieces land weekly — follow our socials or check back often, since one-of-one finds
+                    don't last long.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Can I reserve an item before visiting?</div>
+                <div class="accordion-body">
+                    <p>Message us with the item and we'll hold it for 24 hours where possible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox-overlay" class="lightbox-overlay">
+        <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+        <img id="lightbox-image" src="" alt="">
+    </div>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Revive Thrift Co. All rights reserved. ST10519854.</p>
     </footer>
 
+    <script src="JavaScript/script.js"></script>
 </body>
 </html>
