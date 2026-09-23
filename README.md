@@ -8,7 +8,7 @@ Built for the **Web Development (WEDE5020)** module, Group 2, at Rosebank Intern
  **Student**  Lesedi Reabetsoe Tsutsubi 
  **Student number**  ST10519854 
  **Module**  WEDE5020 — Web Development 
- **Live site**  https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment 
+ **Live site**  https://github.com/Seddi-techlover/ST10519854-Web-Development-Assignment
 
 
 ## The store
