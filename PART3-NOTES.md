@@ -1,6 +1,28 @@
 # SEO Implementation Notes — Revive Thrift Co.
 
 Student: Lesedi Reabetsoe Tsutsubi (ST10519854) · Module: WEDE5020 · Part 3
+### Part 2 feedback — corrections made for the Part 3 submission
+
+Part 2 result: **94 / 100**. The lecturer's comment on the change log (Knowledge criterion,
+7 / 10, Level 3) was: *"Adequate updates or changes made based on feedback. Changelog is
+detailed but could be improved."*
+
+- **Feedback received:** The change log is detailed but could be improved.
+  **Change made:** Rewrote the change log so every assignment part has its own dated entry,
+  split into Added / Changed / Fixed / Removed, and each line names the file that changed
+  (for example `gallery.html`, `script.js`, `style.css`). Added this section to record the
+  lecturer's feedback and the correction made for it. Added a References section. Corrected
+  the README file names to match the real files and rebuilt the tables that were not
+  displaying.
+  **Why:** The lecturer can now trace every edit to a specific file and see why it was made,
+  and the sources used are credited.
+
+**Part 2 carry-overs implemented in Part 3**
+- External stylesheet linked to every HTML page with
+  `<link rel="stylesheet" href="CSS/style.css">`
+- Website built with semantic HTML5 and styled using CSS
+- JavaScript form validation added to the contact and enquiry forms
+- Real-time date and time update added to every page
 
 ## 1. Page titles
 Every page now has a unique, keyword-led title under ~60 characters, in the format
@@ -97,7 +119,7 @@ never reloads. The `action` attribute was removed from `contact.html`; the endpo
 lives in one constant in `script.js`:
 
  from the js
-const FORM_ENDPOINT = "https://httpbin.org/post";
+const FORM_ENDPOINT = "[text](https://formsubmit.co/ajax/revivecothrift@gmail.com)";
 const REQUEST_TIMEOUT_MS = 10000;
 
 
@@ -122,7 +144,7 @@ the outcome without the page changing.
 Submissions go to **FormSubmit**, which forwards each one to the store inbox:
 
 From the js
-const FORM_ENDPOINT = "https://formsubmit.co/ajax/leseditsutsubi@gmail.com";
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/revivecothrift@gmail.com";
 
 Three FormSubmit reserved fields are sent with the data: `_subject` (so each email has a
 useful subject line), `_template: "table"` (readable layout) and `_captcha: "false"`.
