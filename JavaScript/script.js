@@ -21,13 +21,43 @@ function findDirections() {
   );
 }
 
-/* ===== Lightbox Gallery =====
-   Any <img class="lightbox-trigger"> opens in the overlay on click. */
-function openLightbox(src, alt) {
-  const overlay = document.getElementById("lightbox-overlay");
+/* ===== Lightbox Gallery + Slideshow =====
+   Any <img class="lightbox-trigger"> opens in the overlay on click.
+   The overlay doubles as a slideshow: the previous/next buttons (or the
+   left/right arrow keys) move through every trigger image that is currently
+   visible on the page, so a filtered catalogue only slides through its matches.
+   Pages whose overlay has no prev/next buttons simply show one image. */
+let slideImages = [];   // the trigger images in the current slideshow
+let slideIndex = 0;     // which one is showing
+
+function showSlide(index) {
   const img = document.getElementById("lightbox-image");
-  img.src = src;
-  img.alt = alt || "";
+  const caption = document.getElementById("lightbox-caption");
+  const counter = document.getElementById("lightbox-counter");
+  if (!img || slideImages.length === 0) return;
+
+  // Wrap around at both ends
+  slideIndex = (index + slideImages.length) % slideImages.length;
+  const current = slideImages[slideIndex];
+
+  img.src = current.getAttribute("src");
+  img.alt = current.getAttribute("alt") || "";
+  if (caption) caption.textContent = current.dataset.caption || current.getAttribute("alt") || "";
+  if (counter) counter.textContent = (slideIndex + 1) + " / " + slideImages.length;
+}
+
+function openLightbox(trigger) {
+  const overlay = document.getElementById("lightbox-overlay");
+  if (!overlay) return;
+
+  // Build the slideshow from the visible trigger images on this page
+  slideImages = Array.from(document.querySelectorAll(".lightbox-trigger")).filter(function (el) {
+    return !el.closest(".is-hidden");
+  });
+  const start = slideImages.indexOf(trigger);
+  overlay.classList.toggle("lightbox-single", slideImages.length < 2);
+  showSlide(start === -1 ? 0 : start);
+
   overlay.classList.add("lightbox-open");
   document.body.style.overflow = "hidden";
 }
@@ -38,10 +68,13 @@ function closeLightbox() {
   document.body.style.overflow = "";
 }
 
+function nextSlide() { showSlide(slideIndex + 1); }
+function prevSlide() { showSlide(slideIndex - 1); }
+
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".lightbox-trigger").forEach(function (img) {
     img.addEventListener("click", function () {
-      openLightbox(img.getAttribute("src"), img.getAttribute("alt"));
+      openLightbox(img);
     });
   });
 
@@ -50,11 +83,34 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.addEventListener("click", function (e) {
       if (e.target === overlay) closeLightbox();
     });
+
+    const prevBtn = overlay.querySelector(".lightbox-prev");
+    const nextBtn = overlay.querySelector(".lightbox-next");
+    if (prevBtn) prevBtn.addEventListener("click", prevSlide);
+    if (nextBtn) nextBtn.addEventListener("click", nextSlide);
   }
 
   document.addEventListener("keydown", function (e) {
+    const isOpen = overlay && overlay.classList.contains("lightbox-open");
+    if (!isOpen) return;
     if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowRight") nextSlide();
+    if (e.key === "ArrowLeft") prevSlide();
   });
+
+  // Touch support: swipe left/right to change slide
+  if (overlay) {
+    let touchStartX = null;
+    overlay.addEventListener("touchstart", function (e) {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    overlay.addEventListener("touchend", function (e) {
+      if (touchStartX === null) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) { dx < 0 ? nextSlide() : prevSlide(); }
+      touchStartX = null;
+    }, { passive: true });
+  }
 
   /* ===== Accordion ===== */
   document.querySelectorAll(".accordion-header").forEach(function (header) {
@@ -91,13 +147,11 @@ document.addEventListener("DOMContentLoaded", function () {
      The endpoint lives in one constant so it can be swapped without touching
      the logic below. */
 
-  /* Live endpoint: FormSubmit delivers each submission to the inbox below.
-     The very first submission triggers a one-off confirmation email from
-     FormSubmit that has to be accepted before messages start arriving.
-     To keep the address out of the public repo, activate the form once and
-     replace the email with the hashed alias FormSubmit gives you:
-       https://formsubmit.co/ajax/<your-alias-hash> */
-  const FORM_ENDPOINT = "https://formsubmit.co/ajax/leseditsutsubi@gmail.com";
+  /* Submissions go to Netlify Forms, which is built into the Netlify host.
+     Each form in the HTML has data-netlify="true" and a hidden "form-name"
+     field. Netlify stores every submission and emails it to the address set
+     under Forms > Notifications in the Netlify dashboard, so no email address
+     needs to appear in this public code. */
   const REQUEST_TIMEOUT_MS = 10000;
 
   function setSending(form, isSending) {
@@ -125,20 +179,27 @@ document.addEventListener("DOMContentLoaded", function () {
     box.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
-  // Sends the form data as JSON and resolves true only on a 2xx response
+  // Posts the form to Netlify Forms (url-encoded, as Netlify expects) and
+  // resolves on a 2xx response
   function sendForm(payload) {
     const controller = new AbortController();
     const timer = setTimeout(function () {
       controller.abort();
     }, REQUEST_TIMEOUT_MS);
 
-    return fetch(FORM_ENDPOINT, {
+    // Netlify needs the form name plus the real field values
+    const params = new URLSearchParams();
+    params.append("form-name", payload.form);
+    Object.keys(payload).forEach(function (key) {
+      if (key !== "form" && key.charAt(0) !== "_") {
+        params.append(key, payload[key]);
+      }
+    });
+
+    return fetch("/", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(payload),
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
       signal: controller.signal
     })
       .then(function (response) {
@@ -146,9 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!response.ok) {
           throw new Error("Server responded with status " + response.status);
         }
-        return response.json().catch(function () {
-          return {};
-        });
+        return response;
       })
       .finally(function () {
         clearTimeout(timer);
@@ -229,6 +288,7 @@ document.addEventListener("DOMContentLoaded", function () {
           contactForm.reset();
         })
         .catch(function (err) {
+          console.error("Contact form failed:", err);
           showResponse("contact-response", friendlyError(err), true);
         })
         .finally(function () {
@@ -308,6 +368,7 @@ document.addEventListener("DOMContentLoaded", function () {
           enquiryForm.reset();
         })
         .catch(function (err) {
+          console.error("Enquiry form failed:", err);
           showResponse("enquiry-response", friendlyError(err), true);
         })
         .finally(function () {
@@ -389,4 +450,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   applyFilters();
+});
+
+/* ===== Live Date and Time in the Footer =====
+   Fills <p id="datetime"> on every page and refreshes it every second.
+   Uses the visitor's own clock, formatted for South Africa (en-ZA). */
+document.addEventListener("DOMContentLoaded", function () {
+  const dateTimeEl = document.getElementById("datetime");
+  if (!dateTimeEl) return;
+
+  const formatOptions = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  };
+
+  function updateDateTime() {
+    const now = new Date();
+    dateTimeEl.textContent = now.toLocaleString("en-ZA", formatOptions);
+  }
+
+  updateDateTime();                    // show it immediately
+  setInterval(updateDateTime, 1000);   // then update every second
 });

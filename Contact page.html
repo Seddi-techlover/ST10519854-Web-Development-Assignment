@@ -10,7 +10,7 @@
   <meta name="author" content="Lesedi Reabetsoe Tsutsubi (ST10519854)">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#3d5c3a">
-  <link rel="canonical" href="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/contact.html">
+  <link rel="canonical" href="https://thrift-revive-co.netlify.app/contact%20page.html">
 
   <!-- Open Graph: how the page looks when shared on social media -->
   <meta property="og:type" content="website">
@@ -18,15 +18,15 @@
   <meta property="og:locale" content="en_ZA">
   <meta property="og:title" content="Contact Revive Thrift Co. | Braamfontein Thrift Store">
   <meta property="og:description" content="Get in touch with Revive Thrift Co. in Braamfontein. Send us a message about stock, sizing or orders, and read answers to the questions we are asked most.">
-  <meta property="og:url" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/contact.html">
-  <meta property="og:image" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/Images/Picture%2013.jpeg">
+  <meta property="og:url" content="https://thrift-revive-co.netlify.app/contact%20page.html">
+  <meta property="og:image" content="https://thrift-revive-co.netlify.app/Images/Picture%2013.jpeg">
   <meta property="og:image:alt" content="Vintage jewellery displayed at Revive Thrift Co.">
 
   <!-- Twitter/X card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact Revive Thrift Co. | Braamfontein Thrift Store">
   <meta name="twitter:description" content="Get in touch with Revive Thrift Co. in Braamfontein. Send us a message about stock, sizing or orders, and read answers to the questions we are asked most.">
-  <meta name="twitter:image" content="https://seddi-techlover.github.io/ST10519854-Web-Development-Assignment/Images/Picture%2013.jpeg">
+  <meta name="twitter:image" content="https://thrift-revive-co.netlify.app/Images/Picture%2013.jpeg">
 
   <link rel="icon" href="Images/Revive ThriftCo. Logo.png" type="image/png">
     <link rel="stylesheet" href="CSS/style.css">
@@ -35,16 +35,17 @@
 
     <!-- Header Navigation -->
     <header>
-        <a href="Home.html" class="logo">
+        <a href="index.html" class="logo">
             <img src="Images/Revive ThriftCo. Logo.png" alt="Revive Thrift Co. logo — a Braamfontein thrift store">
         </a>
         <ul class="nav-links">
-            <li><a href="Home.html">Home</a></li>
-            <li><a href="About page.html">About</a></li>
-            <li><a href="Home.html">Shop</a></li>
-            <li><a href="Location page.html">Location</a></li>
-            <li><a href="Enquiry page.html">Enquiry</a></li>
-            <li><a href="Contact page.html">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about page.html">About</a></li>
+            <li><a href="index.html#shop">Shop</a></li>
+            <li><a href="gallery page.html">Gallery</a></li>
+            <li><a href="location page.html">Location</a></li>
+            <li><a href="enquiry page.html">Enquiry</a></li>
+            <li><a href="contact page.html">Contact</a></li>
         </ul>
     </header>
 
@@ -59,7 +60,9 @@
         <p>Have questions about stock, sizing, or orders? Drop us a line below.</p>
 
         <!-- Submitted with fetch() in script.js — no page reload -->
-        <form id="contact-form" novalidate>
+        <form id="contact-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="_honey" novalidate>
+            <!-- Netlify Forms needs this hidden field to know which form this is -->
+            <input type="hidden" name="form-name" value="contact">
             <!-- Honeypot: hidden from people, catches bots -->
             <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-group">
@@ -99,16 +102,29 @@
         <div id="contact-response" class="form-response" role="status" aria-live="polite" hidden></div>
     </main>
 
+    <!-- Google Map: embedded with the iframe code from Google Maps (Share > Embed a map).
+     The pin marks the store's Braamfontein location. -->
+    <section class="section">
+        <h2>Find Us on the Map</h2>
+        <p class="section-intro">Braamfontein, Johannesburg &middot; Mon&ndash;Sat, 09:00 &ndash; 17:00</p>
+        <div class="map-embed">
+            <iframe title="Google Map showing Revive Thrift Co. in Braamfontein, Johannesburg"
+                src="https://www.google.com/maps?q=-26.1925,28.0315&amp;z=15&amp;output=embed"
+                width="600" height="380" style="border:0;" allowfullscreen loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
     <!-- A small gallery section to let customers remember what the store
      has to offer -->
     <section class="section section-alt">
         <h2>Find Us In Store</h2>
         <div class="catalogue-grid">
             <div class="catalogue-item">
-                <img src="Images/Picture 20.jpeg" alt="Inside Revive Thrift Co., showing clothing rails and browsing space" class="lightbox-trigger">
+                <img src="Images/Picture 3.jpeg" alt="Inside Revive Thrift Co., showing clothing rails and browsing space" class="lightbox-trigger">
             </div>
             <div class="catalogue-item">
-                <img src="Images/Picture 22.jpeg" alt="A packed clothing rack of second-hand jackets at Revive Thrift Co." class="lightbox-trigger">
+                <img src="Images/Picture 7.jpeg" alt="A packed clothing rack of second-hand jackets at Revive Thrift Co." class="lightbox-trigger">
             </div>
         </div>
     </section>
@@ -151,6 +167,7 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 Revive Thrift Co. All rights reserved. ST10519854.</p>
+        <p id="datetime" class="footer-datetime"></p>
     </footer>
 
     <script src="JavaScript/script.js"></script>
