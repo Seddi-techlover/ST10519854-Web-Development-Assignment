@@ -10,7 +10,7 @@ Built for the **Web Development (WEDE5020)** module, Group 2, at Rosebank Intern
 | **Student** | Lesedi Reabetsoe Tsutsubi |
 | **Student number** | ST10519854 |
 | **Module** | WEDE5020 — Web Development |
-| **Live site (Netlify)** | https://thrift-revive-co.netlify.app |
+| **Live site (Netlify)** | https://revive-thrit-co.netlify.app/ |
 | **Repository** | https://github.com/Seddi-techlover/ST10519854-Web-Development-Assignment |
 
 ---
