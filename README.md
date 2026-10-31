@@ -128,7 +128,7 @@ deliver messages from the live Netlify site, not from a local file.
 
 ## Deployment
 
-Hosted for free on **Netlify** at https://thrift-revive-co.netlify.app/. The project folder
+Hosted for free on **Netlify** at https://revive-thrit-co.netlify.app/. The project folder
 was deployed with Netlify's drag-and-drop upload, and `index.html` sits at the root of the
 folder so Netlify serves it as the home page. Form submissions arrive under **Forms** in the
 Netlify dashboard and are emailed through a notification set up there.
