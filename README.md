@@ -152,7 +152,7 @@ and each line names the file that changed.
 - Google Map (iframe embed) on the contact page, alongside the existing Leaflet map on the
   location page (`contact page.html`)
 - "Gallery" link added to the navigation bar on every page
-- Website deployed to Netlify at https://thrift-revive-co.netlify.app/
+- Website deployed to Netlify at https://revive-thrit-co.netlify.app/
 - References section (below)
 
 **Changed**
